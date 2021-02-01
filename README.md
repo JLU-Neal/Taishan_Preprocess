@@ -14,7 +14,7 @@ $ g++ loop.cpp -fPIC -shared -o loop.so
 ```
 
 
-To run in Linux
+To run in Windows
 
 ```bash
 $ g++ --share loop.cpp -o loop.dll
