@@ -52,10 +52,11 @@ class Transform():
         xyzs = xyzs[mask]
 
         after = time.time()
-        print("tran time: "+str(after - before))
+        # print("tran time: "+str(after - before))
         # fig = plt.figure()
         # ax = mplot3d.Axes3D(fig)
         # ax.scatter3D(xyzs.T[0], xyzs.T[1], xyzs.T[2])  # 散点图
         # plt.show()
+
         return xyzs
 
