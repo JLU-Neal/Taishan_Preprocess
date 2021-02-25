@@ -16,8 +16,14 @@ class Projection():
         img = np.zeros((height, width), np.int8)
 
         step = 1
-        i = (xyzs[:, 1] - 800) // 10
+        i = (xyzs[:, 1] - 500) // 10
         j = (xyzs[:, 0] + 1200) // 10
+
+        i_mask = (i < 480) * (i>=0)
+        j_mask = (j < 640) * (j>=0)
+
+        i = i[i_mask]
+        j = j[j_mask]
         before_loop = time.time()
         ij_length = i.shape[0]
 
@@ -30,11 +36,17 @@ class Projection():
         after_loop = time.time()
         # print("loop time: "+str(after_loop - before_loop))
 
-        threshold = 2
+
+
+        img = cv2.blur(img.astype(float), (3, 3))
+        img *= 127
+        threshold = 100
         img[img < threshold] = 0
         img[img >= threshold] = 127
-        after = time.time()
+        # img = img.astype(np.uint8)
 
+        # after = time.time()
+        #
         # print("proj time: "+str(after - before))
         # cv2.imshow('image', img)
         # cv2.waitKey(0)
