@@ -27,7 +27,7 @@ class Normalization():
         img = img[:int(self.length * 0.75 * self.times),
                       int(self.min_j * self.times * 0.8):int((self.min_j + self.length) * self.times)]
         img = img.astype(np.float)
-        img = cv2.resize(img, (0, 0), fx=480/img.shape[0], fy=640/img.shape[1], interpolation=cv2.INTER_CUBIC)
+        img = cv2.resize(img, (0, 0), fx=640/img.shape[1], fy=480 / img.shape[0], interpolation=cv2.INTER_CUBIC)
 
 
 
