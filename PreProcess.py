@@ -19,8 +19,9 @@ class PreProcess():
         img = self.project.exec(xyzs)
         img = self.norm.exec(img)
         after = time.time()
-        # print("totaltime: "+str(after - before))
-        # cv2.imshow('image', img)
-        # cv2.waitKey(0)
-        # cv2.destroyAllWindows()
+        print("totaltime: "+str(after - before))
+        cv2.imshow('image', img)
+        cv2.waitKey(0)
+        cv2.destroyAllWindows()
+        print(img.shape)
         return img
