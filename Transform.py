@@ -41,14 +41,26 @@ class Transform():
 
 
         #rotate
-        angle = 0.75 * (np.pi/4)
-        rotation = np.array([[1, 0, 0],
-                             [0, np.cos(angle), -np.sin(angle)],
-                             [0, np.sin(angle), np.cos(angle)]])
-        xyzs = np.matmul(xyzs, rotation)
+        angleX = 1 * (np.pi/4)
+        rotationX = np.array([[1, 0, 0],
+                             [0, np.cos(angleX), -np.sin(angleX)],
+                             [0, np.sin(angleX), np.cos(angleX)]])
+
+        angleY = 0
+        rotationY = np.array([[np.cos(angleY), 0, np.sin(angleY)],
+                              [0, 1, 0],
+                              [-np.sin(angleY), 0, np.cos(angleY)]])
+        angleZ = 0.1 * (np.pi/4)
+        rotationZ = np.array([[np.cos(angleZ), -np.sin(angleZ), 0],
+                              [np.sin(angleZ), np.cos(angleZ), 0],
+                              [0, 0, 1]])
+
+        xyzs = np.matmul(xyzs, rotationX)
+        # xyzs = np.matmul(xyzs, rotationY)
+        xyzs = np.matmul(xyzs, rotationZ)
 
         # crop
-        mask = (xyzs[:, 0] > -1200) * (xyzs[:, 0] < 1200) * (xyzs[:, 1] < 1450) * (xyzs[:, 2] > -1500) * (xyzs[:, 2 ] < 1600)
+        mask = (xyzs[:, 0] > -1200) * (xyzs[:, 0] < 1200) * (xyzs[:, 1] < 1400) * (xyzs[:, 2] > -1500) * (xyzs[:, 2 ] < 1200)
         xyzs = xyzs[mask]
 
         after = time.time()

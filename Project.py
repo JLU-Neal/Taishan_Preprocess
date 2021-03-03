@@ -15,9 +15,12 @@ class Projection():
         width = 640
         img = np.zeros((height, width), np.int8)
 
+
         step = 1
-        i = (xyzs[:, 1] - 500) // 10
-        j = (xyzs[:, 0] + 1200) // 10
+        scale = 3
+
+        i = (xyzs[:, 1] - 500) // scale
+        j = (xyzs[:, 0] + 800) // scale
 
         i_mask = (i < 480) * (i>=0)
         j_mask = (j < 640) * (j>=0)
@@ -40,14 +43,14 @@ class Projection():
 
         img = cv2.blur(img.astype(float), (3, 3))
         img *= 127
-        threshold = 100
+        threshold = 14
         img[img < threshold] = 0
         img[img >= threshold] = 127
         # img = img.astype(np.uint8)
 
-        # after = time.time()
-        #
-        # print("proj time: "+str(after - before))
+        after = time.time()
+
+        print("proj time: "+str(after - before))
         # cv2.imshow('image', img)
         # cv2.waitKey(0)
         # cv2.destroyAllWindows()
