@@ -60,7 +60,7 @@ class Transform():
         xyzs = np.matmul(xyzs, rotationZ)
 
         # crop
-        mask = (xyzs[:, 0] > -1200) * (xyzs[:, 0] < 1200) * (xyzs[:, 1] < 1400) * (xyzs[:, 2] > -1500) * (xyzs[:, 2 ] < 1200)
+        mask = (xyzs[:, 0] > -1200) * (xyzs[:, 0] < 1200) * (xyzs[:, 1] < 1200) * (xyzs[:, 2] > -1500) * (xyzs[:, 2 ] < 1200)
         xyzs = xyzs[mask]
 
         after = time.time()

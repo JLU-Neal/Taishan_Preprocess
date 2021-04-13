@@ -9,7 +9,7 @@ from PreProcess import PreProcess
 if __name__ == '__main__':
     # print_hi('PyCharm')
 
-    depth_bg = cv2.imread('./depth (250).png', -1)
+    depth_bg = cv2.imread('./depth (260).png', -1)
     before = time.time()
     pp = PreProcess()
     pp.exec(depth_bg)

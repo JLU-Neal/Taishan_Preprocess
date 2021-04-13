@@ -20,7 +20,7 @@ class Projection():
         scale = 3
 
         i = (xyzs[:, 1] - 500) // scale
-        j = (xyzs[:, 0] + 800) // scale
+        j = (xyzs[:, 0] + 1300) // scale
 
         i_mask = (i < 480) * (i>=0)
         j_mask = (j < 640) * (j>=0)
@@ -41,9 +41,9 @@ class Projection():
 
 
 
-        img = cv2.blur(img.astype(float), (3, 3))
+        img = cv2.blur(img.astype(float), (9, 9))
         img *= 127
-        threshold = 14
+        threshold = 5
         img[img < threshold] = 0
         img[img >= threshold] = 127
         # img = img.astype(np.uint8)
