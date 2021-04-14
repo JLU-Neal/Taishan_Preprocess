@@ -24,9 +24,11 @@ class Projection():
 
         i_mask = (i < 480) * (i>=0)
         j_mask = (j < 640) * (j>=0)
+        # Combine two mask to sift points
+        mask = i_mask * j_mask
 
-        i = i[i_mask]
-        j = j[j_mask]
+        i = i[mask]
+        j = j[mask]
         before_loop = time.time()
         ij_length = i.shape[0]
 
