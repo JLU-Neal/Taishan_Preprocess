@@ -70,8 +70,8 @@ class Transform():
 
             x = 1500 - np.arange(point_count_height.shape[0])
             y = point_count_height
-            # plt.plot(x, y)
-            # plt.show()
+            plt.plot(x, y)
+            plt.show()
             ground_mask = y > 100
             self.threshold = x[ground_mask].min() - 30
 
@@ -81,10 +81,10 @@ class Transform():
 
         after = time.time()
         print("tran time: "+str(after - before))
-        fig = plt.figure()
-        ax = mplot3d.Axes3D(fig)
-        ax.scatter3D(xyzs.T[0], xyzs.T[1], xyzs.T[2])  # 散点图
-        plt.show()
+        # fig = plt.figure()
+        # ax = mplot3d.Axes3D(fig)
+        # ax.scatter3D(xyzs.T[0], xyzs.T[1], xyzs.T[2])  # 散点图
+        # plt.show()
 
         return xyzs
 
