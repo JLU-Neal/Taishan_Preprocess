@@ -5,11 +5,14 @@ import ctypes
 
 class Projection():
     def __init__(self):
+
         print()
+
+        self.threshold = None
         self.loop = Loop()
 
 
-    def exec(self, xyzs):
+    def exec(self, xyzs, threshold):
         before = time.time()
         height = 480
         width = 640
@@ -18,9 +21,12 @@ class Projection():
 
         step = 1
         scale = 3
-
-        i = (xyzs[:, 1] - 500) // scale
-        j = (xyzs[:, 0] + 1300) // scale
+        i_offset = -500
+        j_offset = 1300
+        i = (xyzs[:, 1] + i_offset) // scale
+        j = (xyzs[:, 0] + j_offset) // scale
+        if self.threshold is None:
+            self.threshold = (threshold + i_offset) // scale
 
         i_mask = (i < 480) * (i>=0)
         j_mask = (j < 640) * (j>=0)
@@ -58,7 +64,9 @@ class Projection():
         # cv2.destroyAllWindows()
 
 
-        return img
+        return img, self.threshold
+
+
 class Loop():
     def __init__(self):
         # FOR LINUX, command: g++ loop.cpp -fPIC -shared -o loop.so

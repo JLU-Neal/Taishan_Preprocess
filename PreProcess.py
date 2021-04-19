@@ -6,6 +6,7 @@ import time
 
 
 
+
 class PreProcess():
     def __init__(self):
         self.transform = Transform()
@@ -15,9 +16,10 @@ class PreProcess():
 
     def exec(self, depth_bg):
         before = time.time()
-        xyzs = self.transform.exec(depth_bg)
-        img = self.project.exec(xyzs)
-        img = self.norm.exec(img)
+        xyzs, threshold = self.transform.exec(depth_bg)
+        img, threshold = self.project.exec(xyzs, threshold)
+        img = self.norm.exec(img, threshold)
+
         after = time.time()
         # print("totaltime: "+str(after - before))
         cv2.imshow('image', img)

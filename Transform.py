@@ -4,6 +4,7 @@ from mpl_toolkits import mplot3d
 import cv2
 import numpy as np
 import time
+
 # scale = 4
 # ox = 331.45630 / scale
 # oy = 232.41992 / scale
@@ -86,5 +87,5 @@ class Transform():
         # ax.scatter3D(xyzs.T[0], xyzs.T[1], xyzs.T[2])  # 散点图
         # plt.show()
 
-        return xyzs
+        return xyzs, self.threshold
 
