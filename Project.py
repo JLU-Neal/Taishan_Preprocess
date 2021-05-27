@@ -58,7 +58,7 @@ class Projection():
 
         after = time.time()
 
-        print("proj time: "+str(after - before))
+        # print("proj time: "+str(after - before))
         # cv2.imshow('image', img)
         # cv2.waitKey(0)
         # cv2.destroyAllWindows()
@@ -70,9 +70,9 @@ class Projection():
 class Loop():
     def __init__(self):
         # FOR LINUX, command: g++ loop.cpp -fPIC -shared -o loop.so
-        _file = 'loop.so'
+        # _file = 'loop.so'
         # FOR Windows, command: g++ --share loop.cpp -o loop.dll
-        # _file = 'loop.dll'
+        _file = 'loop.dll'
         _path = './' + _file
         lib = ctypes.cdll.LoadLibrary(_path)
         self.c_loop = lib.func

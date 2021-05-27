@@ -49,7 +49,7 @@ class Normalization():
 
 
         after = time.time()
-        print("norm time: "+str(after - before))
+        # print("norm time: "+str(after - before))
         # cv2.imshow('image', img)
         # cv2.waitKey(0)
         # cv2.destroyAllWindows()
