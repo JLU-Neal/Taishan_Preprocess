@@ -1,24 +1,3 @@
-# Taishan_Preprocess
-For data preprocessing in Taishan PUSH-UP Detection Project.
-
-
-Before running the programme, you should compile the loop.cpp, then genetate loop.so (Linux) or loop.dll (Windows)
-
-
-## Environment
-
-To run in Linux
-
-```bash
-$ g++ loop.cpp -fPIC -shared -o loop.so
-```
-
-
-To run in Windows
-
-```bash
-$ g++ --share loop.cpp -o loop.dll
-```
 # 泰山俯卧撑检测系统说明文档
 
 ## 环境配置
@@ -47,3 +26,26 @@ $ g++ --share loop.cpp -o loop.dll
 ```
 
 ## 程序运行
+
+
+# Taishan_Preprocess
+For data preprocessing in Taishan PUSH-UP Detection Project.
+
+
+Before running the programme, you should compile the loop.cpp, then genetate loop.so (Linux) or loop.dll (Windows)
+
+
+## Environment
+
+To run in Linux
+
+```bash
+$ g++ loop.cpp -fPIC -shared -o loop.so
+```
+
+
+To run in Windows
+
+```bash
+$ g++ --share loop.cpp -o loop.dll
+```
