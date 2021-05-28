@@ -25,7 +25,7 @@ $ g++ --share loop.cpp -o loop.dll
  _file = 'loop.dll'
 ```
 
-## 程序总体框架
+## 预处理部分Preprocess.py总体框架
 
 ![](./UML.jpg)
 
