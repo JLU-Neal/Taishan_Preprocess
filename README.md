@@ -25,10 +25,15 @@ $ g++ --share loop.cpp -o loop.dll
  _file = 'loop.dll'
 ```
 ## 程序运行
-首先需要在final_gui.py中对以下代码进行设置：
+首先需要在final_gui.py中对main函数中的参数进行设置：
+
 dir_pic为图片输入路径，
+
 dir_out_pic为图片输入路径，
-因为图片中的启示图片
+
+默认设定从第N=200张图片开始处理，因为一开始的图片可能存在人仍然未趴下的情况，
+
+是否进行图像镜面翻转
 ```python
 dir_pic = r"D:\taishan_images\2-1"
 dir_out_pic = r"D:\taishan_images\output_images"
