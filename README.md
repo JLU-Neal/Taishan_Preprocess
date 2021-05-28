@@ -27,14 +27,7 @@ $ g++ --share loop.cpp -o loop.dll
 
 ## 程序总体框架
 
-```mermaid
-graph TD;
-  A-->B;
-  A-->C;
-  B-->D;
-  C-->D;
-```
-
+![](./UML.jpg)
 
 # Taishan_Preprocess
 For data preprocessing in Taishan PUSH-UP Detection Project.
