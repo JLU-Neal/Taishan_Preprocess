@@ -24,6 +24,16 @@ $ g++ --share loop.cpp -o loop.dll
 # FOR Windows, command: g++ --share loop.cpp -o loop.dll |
  _file = 'loop.dll'
 ```
+## 程序运行
+首先需要在final_gui.py中对以下代码进行设置：
+dir_pic为图片输入路径，
+dir_out_pic为图片输入路径，
+因为图片中的启示图片
+```python
+dir_pic = r"D:\taishan_images\2-1"
+dir_out_pic = r"D:\taishan_images\output_images"
+main(dir_pic, dir_out_pic, 200, True)
+```
 
 ## 预处理部分Preprocess.py总体框架
 Preprocess中主要关联了三个类：
